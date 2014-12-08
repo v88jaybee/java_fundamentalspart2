@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fundamentals Part II</title>
+	<script>
+		var person = { };
+		person = {
+			name: 'Trey',
+			distance_travelled: 0,
+			say_name: alert('person'),
+			say_something: function something(a){
+								console.log('Trey says ' + a);
+						   },
+			walk: function walking(){
+					person.distance_travelled += 3;
+					alert('Trey is walking: ' + person.distance_travelled);
+			},
+			run: function running(){
+					person.distance_travelled += 10;
+					alert('Trey is running: ' + person.distance_travelled);
+			},
+			crawl: function crawling(){
+						person.distance_travelled += 1;
+						alert('Trey is crawling: ' + person.distance_travelled);
+			},
+			fly: function flying(func1, func2){
+					var random = Math.floor((Math.random() * 10) + 1);
+
+					if(random >= 1 && random <= 3)
+					{
+						alert("Flying!!!");
+						func1();
+					}
+					else
+					{
+						alert("Failed to Fly...");
+						func2();
+					}
+
+				
+			}
+		};
+
+		// person.say_something('I am not cool')
+		// person.walk();
+		// person.run();
+		// person.crawl();
+		// console.log(person);
+
+		person.doSomething = function doneSomething(){
+			var random = Math.floor((Math.random() * 3) + 1);	
+			if(random == 1)
+				person.walk();
+			else if(random == 2)
+				person.run();
+			else	
+				person.crawl();
+
+		};
+
+		console.log(person.doSomething());
+		
+		var x = function() { 
+			alert('eating ice cream!'); 
+		}  
+		var y = function() { 
+			alert('crying at home...'); 
+		}
+
+		person.fly(x,y);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
